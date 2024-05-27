@@ -67,8 +67,8 @@ function activate_nvidia(){
     
     cd ~/ros2_ws/src/whisper_ros/whisper_ros
 
-    VAR_ORIGINAL="#option(WHISPER_CUBLAS"
-    VAR_NEW="option(WHISPER_CUBLAS"
+    VAR_ORIGINAL="#option(WHISPER_CUBLAS "whisper: support for cuBLAS" ON)"
+    VAR_NEW="option(WHISPER_CUBLAS "whisper: support for cuBLAS" ON)"
 
     cat CMakeLists.txt | grep WHISPER_CUBLAS
     sed -i '/$VAR_ORIGINAL/c\$VAR_NEW' CMakeLists.txt
@@ -113,6 +113,25 @@ clear -x
 echo -e "$STARS"
 echo "Starting Installation of ROS 2 chatbot"
 echo -e "$STARS"
+
+
+yasmin_installation
+
+echo -e "$STARS"
+echo -e "$STARS"
+llama_installation
+
+echo -e "$STARS"
+echo -e "$STARS"
+whisper_installation
+
+echo -e "$STARS"
+echo -e "$STARS"
+tts_ros_installation
+
+echo -e "$STARS"
+echo -e "$STARS"
+audio_common_installation
 
 
 clear -x
